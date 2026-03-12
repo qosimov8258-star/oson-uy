@@ -1,0 +1,44 @@
+@import "tailwindcss";
+
+@theme {
+  --color-forest-900: #013220;
+  --color-forest-800: #02452c;
+  --color-forest-700: #035c3a;
+  
+  --color-base-black: #000000;
+  --color-base-dark: #0a0a0a;
+  --color-base-gray: #1a1a1a;
+  
+  --color-primary-accent: #035c3a; 
+  --color-primary-hover: #047249; 
+}
+
+body {
+  font-family: 'Inter', 'Roboto', sans-serif;
+  background-color: var(--color-base-black);
+  color: #ffffff;
+}
+
+/* Custom fade animation for background images */
+@keyframes fade {
+  0%, 100% { opacity: 0; }
+  10%, 90% { opacity: 1; }
+}
+
+.bg-slider-img {
+  animation: fade 15s infinite; /* 3 images * 5 seconds */
+  opacity: 0;
+}
+
+.bg-slider-img:nth-child(1) { animation-delay: 0s; }
+.bg-slider-img:nth-child(2) { animation-delay: 5s; }
+.bg-slider-img:nth-child(3) { animation-delay: 10s; }
+
+/* Custom scrollbar for horizontal scroll in footer if needed */
+.hide-scrollbar::-webkit-scrollbar {
+  display: none;
+}
+.hide-scrollbar {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
