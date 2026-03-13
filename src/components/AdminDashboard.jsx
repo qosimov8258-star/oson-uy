@@ -35,7 +35,7 @@ const LoginView = ({ onLogin }) => {
 
     const user = authorized.find(u => u.user === username && u.pass === password);
     if (user) {
-      navigate('/admin'); // Navigate to admin dashboard on successful login
+      onLogin(user.user);
     } else {
       setError('Ruxsat berilmagan! Login yoki parol xato.');
     }
